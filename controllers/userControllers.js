@@ -40,9 +40,9 @@ class userController {
 					errMessages.push(errMsg);
 				}
 
-				if (err.name.includes("Sequelize")) {
-					errCode = 400;
-				}
+				//if (err.name.includes("Sequelize")) {
+				//	errCode = 400;
+				//}
 
 				res.status(errCode).json({
 					error: err.name,

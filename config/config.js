@@ -13,15 +13,17 @@ module.exports = {
 		password: DB_PASSWORD,
 		database: DB_NAME,
 		host: DB_HOST,
-		port: 5433,
+		//port: 5433,
 		"dialect": DB_DIALECT
 	},
 	test: {
-		username: "root",
-		password: null,
-		database: "database_test",
-		host: "127.0.0.1",
-		dialect: "postgres",
+		username: DB_USERNAME,
+		password: DB_PASSWORD,
+		database: DB_NAME,
+		host: DB_HOST,
+		//port: 5433,
+		"dialect": DB_DIALECT
+		
 	},
 	production: {
 		username: "bagmjcylypjlpd",
