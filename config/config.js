@@ -13,7 +13,7 @@ module.exports = {
 		password: DB_PASSWORD,
 		database: DB_NAME,
 		host: DB_HOST,
-		//port: 5433,
+		port: 5433,
 		"dialect": DB_DIALECT
 	},
 	test: {
@@ -21,7 +21,7 @@ module.exports = {
 		password: DB_PASSWORD,
 		database: DB_NAME,
 		host: DB_HOST,
-		//port: 5433,
+		port: 5433,
 		"dialect": DB_DIALECT
 		
 	},
