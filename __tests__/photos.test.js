@@ -83,7 +83,7 @@ describe("Testing for endpoint /photos", () => {
                 expect(response.body.photos[0]).toHaveProperty('poster_image_url')
                 expect(response.body.photos[0]).toHaveProperty('title')
                 expect(response.body.photos[0]).toHaveProperty('caption')
-				expect(response.body.photos[0].title).toBe('Amazing spiderman - Testing')
+				        expect(response.body.photos[0].title).toBe('Amazing spiderman - Testing')
                 expect(response.body.photos[0].caption).toBe('Caption photo nya')
     });
 
