@@ -37,6 +37,12 @@ beforeAll(async () => {
 
 describe("Testing for endpoint /photos", () => {
 
+  test("requires login", async () => {
+    const response = await request(app).get('/photos')
+    expect(response.statusCode).toBe(500)
+    expect(response.body.message).toBe("jwt must be provided");
+  })
+
     test("POST /photos -  Create Photo", (done) => {
         jwt.verify(auth.token, 'secretkey', (err, decoded) => {
             return new Promise((resolve, reject) => {
@@ -85,7 +91,7 @@ describe("Testing for endpoint /photos", () => {
                 expect(response.body.photos[0]).toHaveProperty('caption')
 				        expect(response.body.photos[0].title).toBe('Amazing spiderman - Testing')
                 expect(response.body.photos[0].caption).toBe('Caption photo nya')
-    });
+    })
 
     test("PUT /photos/:photoId -  Edit Photo", async () => {
         const response = await request(app)
@@ -115,7 +121,7 @@ describe("Testing for endpoint /photos", () => {
         expect(response.body.message).toContain('Your Photo has been successfully deleted.')
         expect(response.body.message).toBe('Your Photo has been successfully deleted.')
     
-      });
+      })
 
 })
 

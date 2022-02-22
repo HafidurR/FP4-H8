@@ -50,6 +50,13 @@ beforeAll(async () => {
 
 describe("Testing for endpoint /comments", () => {
 
+
+  test("requires login", async () => {
+    const response = await request(app).get('/comments')
+    expect(response.statusCode).toBe(500)
+    expect(response.body.message).toBe("jwt must be provided");
+  })
+
     test("POST /comments -  post / create comment", (done) => {
         jwt.verify(auth.token, 'secretkey', (err, decoded) => {
             return new Promise((resolve, reject) => {

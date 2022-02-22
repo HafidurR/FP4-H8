@@ -9,7 +9,7 @@ route.post("/users/register", userControllers.register);
 route.post("/users/login", userControllers.login);
 
 // MIDDLEWARE CHECK TOKEN
-//route.use(userControllers.loginMiddleware);
+route.use(userControllers.loginMiddleware);
 
 // USER MANAGEMENT ROUTE
 route.put("/users/:userId", userControllers.edit);
